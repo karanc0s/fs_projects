@@ -1,7 +1,13 @@
 package com.karan.notes.repository;
 
-import com.karan.notes.entity.User;
+import com.karan.notes.entity.PrincipalUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends JpaRepository<User , Long> {
+import java.util.Optional;
+
+public interface UserRepository extends JpaRepository<PrincipalUser, Long> {
+
+    Optional<PrincipalUser> findByUsername(String username);
+
+    Optional<PrincipalUser> findByEmail(String email);
 }
