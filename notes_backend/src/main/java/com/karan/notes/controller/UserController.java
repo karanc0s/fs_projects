@@ -1,21 +1,28 @@
 package com.karan.notes.controller;
 
-
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.karan.notes.dto.UserDto;
+import com.karan.notes.service.UserService;
+import lombok.AllArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/user")
+@AllArgsConstructor
 public class UserController {
 
+    private final UserService userService;
 
-    public void updateUserDetails(){
-
+    @PostMapping("/update-user")
+    public ResponseEntity<UserDto> updateUserDetails(@RequestBody UserDto userDto){
+        UserDto updatedUser = userService.updateUser(userDto);
+        return ResponseEntity.ok(updatedUser);
     }
 
-    public void deleteUser(Long userId){
-
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Boolean> deleteUser(@PathVariable("id") Long userId){
+        Boolean deleted = userService.deleteUser(userId);
+        return ResponseEntity.ok(deleted);
     }
-
 
 }
