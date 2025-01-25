@@ -8,7 +8,7 @@ type Props  = {
 export default function Container(props : Props){
 
     return (
-        <div className={`inline-block w-full ${props.className}}`}>
+        <div className={`inline-block w-full ${props.className}`}>
             {props.children}
         </div>
     )

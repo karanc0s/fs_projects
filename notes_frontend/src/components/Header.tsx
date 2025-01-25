@@ -31,11 +31,11 @@ export default function Header(){
 
 
     return (
-        <header className="flex">
+        <header className="flex fixed w-full bg-white top-0">
             <Container>
                 <nav className="px-3 flex items-center justify-evenly">
                     <div className="mx-auto py-3 hover:cursor-pointer">
-                        <h1 className="text-xl"> Notes App </h1>
+                        <h1 className="text-xl font-semibold font-mono"> Notes </h1>
                     </div>
                     <ul className="flex ml-auto">
                         {navItem.map(
@@ -44,8 +44,9 @@ export default function Header(){
                                     <button
                                         className="inline-block duration-200
                                         hover:bg-black hover:text-white
+                                        font-mono
                                         text-xl
-                                        rounded-sm px-7 py-3"
+                                        rounded-sm px-8 py-3"
                                     >
                                         {item.name}
                                     </button>
