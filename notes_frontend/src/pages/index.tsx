@@ -1,5 +1,9 @@
-import PageHome from "./PageHome.tsx";
+import HomePage from "./HomePage.tsx";
+import NotePage from "./NotePage.tsx";
+import WriteNotePage from "./WriteNotePage.tsx";
 
 export {
-    PageHome
+    HomePage,
+    NotePage,
+    WriteNotePage
 }

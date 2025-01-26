@@ -1,5 +1,8 @@
-export default function PageHome() {
+import {useNavigate} from "react-router-dom";
 
+export default function HomePage() {
+
+    const navigate = useNavigate();
     const notes = [
         {
             noteId: 1,
@@ -93,6 +96,8 @@ export default function PageHome() {
         },
     ]
 
+
+
     return (
         <div className="mt-14">
 
@@ -100,7 +105,13 @@ export default function PageHome() {
 
                 <div className="col-span-10 p-2 overflow-y-auto h-screen no-scrollbar">
                     {notes.map((item) => (
-                        <div key={item.noteId} className="group hover:cursor-pointer mt-5">
+                        <div
+                            key={item.noteId}
+                            className="group hover:cursor-pointer mt-5"
+                            onClick={() => {
+                                navigate(`/note/${item.noteId}`);
+                            }}
+                        >
                             <div className="flex flex-col  mx-4">
                                 <h2 className="hover:underline hover:cursor-pointer  font-normal font-mono p-2 text-sm">
                                     singh0097
